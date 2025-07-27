@@ -72,17 +72,17 @@ const HeroSection = () => {
           }} />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-start pt-8 lg:pt-26">
           <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
             {/* Left Column - Text Content */}
             <div>
               <div className="mb-4">
                 <span className="inline-block bg-lime-100 text-lime-800 px-3 py-1 rounded-full text-xs font-semibold tracking-wide uppercase">
-                  Educational Excellence
+                  BANGLADESH'S PREMIUM EDUCATION CONSULTANCY
                 </span>
               </div>
               
-              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-stone-800 leading-tight mb-6">
+              <h1 className="text-4xl lg:text-5xl xl:text-5xl font-bold text-stone-800 leading-tight mb-6">
                 Gain a Headstart to an
                 <span className="block text-lime-600 mt-1">Ivy League Education</span>
               </h1>
