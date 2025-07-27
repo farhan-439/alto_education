@@ -1,8 +1,9 @@
 import React from 'react';
-import { ArrowRight, Menu, X } from 'lucide-react';
+import { ArrowRight, Menu, X, Calendar, MessageCircle, Users, BookOpen, TrendingUp, Award } from 'lucide-react';
 
 const HeroSection = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+  const [activeTab, setActiveTab] = React.useState('consultation');
 
   return (
     <div className="h-screen bg-gradient-to-br from-stone-100 via-amber-50 to-stone-200 flex flex-col">
@@ -25,6 +26,10 @@ const HeroSection = () => {
                 <a href="#" className="text-stone-600 hover:text-lime-600 px-2 py-1 text-sm font-medium transition-colors">Services</a>
                 <a href="#" className="text-stone-600 hover:text-lime-600 px-2 py-1 text-sm font-medium transition-colors">Results</a>
                 <a href="#" className="text-stone-600 hover:text-lime-600 px-2 py-1 text-sm font-medium transition-colors">Contact</a>
+                <a href="#" className="text-stone-600 hover:text-lime-600 px-2 py-1 text-sm font-medium transition-colors flex items-center">
+                  <Users className="w-4 h-4 mr-1" />
+                  Student Portal
+                </a>
               </div>
             </div>
             
@@ -55,6 +60,10 @@ const HeroSection = () => {
               <a href="#" className="block text-stone-600 hover:text-lime-600 py-1 text-sm font-medium">Services</a>
               <a href="#" className="block text-stone-600 hover:text-lime-600 py-1 text-sm font-medium">Results</a>
               <a href="#" className="block text-stone-600 hover:text-lime-600 py-1 text-sm font-medium">Contact</a>
+              <a href="#" className="block text-stone-600 hover:text-lime-600 py-1 text-sm font-medium flex items-center">
+                <Users className="w-4 h-4 mr-1" />
+                Student Portal
+              </a>
               <button className="w-full bg-lime-600 hover:bg-lime-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors shadow-lg mt-2">
                 Schedule Consultation
               </button>
@@ -87,9 +96,25 @@ const HeroSection = () => {
                 <span className="block text-lime-600 mt-1">Ivy League Education</span>
               </h1>
               
-              <p className="text-lg lg:text-xl text-stone-600 leading-relaxed mb-8 max-w-xl">
+              <p className="text-lg lg:text-xl text-stone-600 leading-relaxed mb-6 max-w-xl">
                 Expert guidance for boarding school admissions and college counseling with personalized mentorship.
               </p>
+
+              {/* Quick Access Features */}
+              <div className="flex flex-wrap gap-3 mb-6">
+                <button className="flex items-center bg-white/80 hover:bg-white border border-stone-200 hover:border-lime-300 text-stone-700 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 shadow-sm hover:shadow-md">
+                  <Calendar className="w-4 h-4 mr-2 text-lime-600" />
+                  Instant Booking
+                </button>
+                <button className="flex items-center bg-white/80 hover:bg-white border border-stone-200 hover:border-lime-300 text-stone-700 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 shadow-sm hover:shadow-md">
+                  <MessageCircle className="w-4 h-4 mr-2 text-lime-600" />
+                  Live Chat
+                </button>
+                <button className="flex items-center bg-white/80 hover:bg-white border border-stone-200 hover:border-lime-300 text-stone-700 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 shadow-sm hover:shadow-md">
+                  <BookOpen className="w-4 h-4 mr-2 text-lime-600" />
+                  Resources
+                </button>
+              </div>
               
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <button className="group bg-lime-600 hover:bg-lime-700 text-white px-6 py-3 rounded-xl text-base font-semibold transition-all duration-300 flex items-center justify-center shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
@@ -140,6 +165,24 @@ const HeroSection = () => {
                     <div className="w-2 h-2 bg-lime-500 rounded-full mr-3"></div>
                     <span className="text-stone-700 text-sm">Expert recommendations</span>
                   </div>
+                  <div className="flex items-center">
+                    <div className="w-2 h-2 bg-lime-500 rounded-full mr-3"></div>
+                    <span className="text-stone-700 text-sm">Direct mentor access</span>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-2 h-2 bg-lime-500 rounded-full mr-3"></div>
+                    <span className="text-stone-700 text-sm">Progress tracking dashboard</span>
+                  </div>
+                </div>
+
+                {/* Quick Booking Options */}
+                <div className="grid grid-cols-2 gap-2 mb-4">
+                  <button className="bg-lime-50 hover:bg-lime-100 border border-lime-200 text-lime-700 px-3 py-2 rounded-lg text-xs font-medium transition-all duration-300">
+                    Today 3PM
+                  </button>
+                  <button className="bg-lime-50 hover:bg-lime-100 border border-lime-200 text-lime-700 px-3 py-2 rounded-lg text-xs font-medium transition-all duration-300">
+                    Tomorrow 10AM
+                  </button>
                 </div>
 
                 <button className="w-full bg-gradient-to-r from-lime-600 to-green-600 hover:from-lime-700 hover:to-green-700 text-white px-4 py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-sm">
@@ -158,12 +201,7 @@ const HeroSection = () => {
               <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-green-200 rounded-full opacity-15 blur-2xl"></div>
               
               {/* Floating Achievement Cards */}
-              <div className="absolute -top-2 -left-2 bg-white rounded-xl p-3 shadow-xl border border-stone-100 z-20">
-                <div className="text-center">
-                  <div className="text-lg font-bold text-lime-600">95%</div>
-                  <div className="text-xs text-stone-600 font-medium">Boarding Success</div>
-                </div>
-              </div>
+
               
               <div className="absolute -bottom-2 -right-2 bg-white rounded-xl p-3 shadow-xl border border-stone-100 z-20">
                 <div className="text-center">
@@ -171,12 +209,21 @@ const HeroSection = () => {
                   <div className="text-xs text-stone-600 font-medium">Universities</div>
                 </div>
               </div>
+
+              {/* Live Chat Indicator */}
+              <div className="absolute top-4 right-4 bg-green-500 w-3 h-3 rounded-full animate-pulse z-30"></div>
+              <div className="absolute top-3 right-3 bg-green-400 w-5 h-5 rounded-full animate-ping z-20"></div>
+              
+              {/* Student Success Indicator */}
+              <div className="absolute top-12 left-4 bg-white rounded-lg p-2 shadow-lg border border-stone-100 z-20">
+                <div className="flex items-center text-xs">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
+                  <span className="text-stone-600 font-medium">3 students accepted today</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-
-        {/* Trust Indicators - Bottom of viewport */}
-
       </div>
     </div>
   );
