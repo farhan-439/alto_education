@@ -176,22 +176,7 @@ const HeroSection = () => {
         </div>
 
         {/* Trust Indicators - Bottom of viewport */}
-        <div className="absolute bottom-6 left-0 right-0">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-4">
-              <p className="text-stone-500 font-medium uppercase tracking-wide text-xs">
-                Trusted by families seeking admission to
-              </p>
-            </div>
-            <div className="flex justify-center space-x-8 opacity-60">
-              {['Harvard', 'Yale', 'Princeton', 'Stanford', 'MIT'].map((school, index) => (
-                <div key={index} className="bg-white/80 rounded-lg px-3 py-1 shadow-sm border border-stone-100">
-                  <span className="text-stone-700 font-semibold text-xs">{school}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+
       </div>
     </div>
   );
